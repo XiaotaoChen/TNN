@@ -1,12 +1,19 @@
-file(GLOB COMMON_SRCS ${CMAKE_SOURCE_DIR}/tools/common/*.cc)
+
+set(UPDIR ../..)
+
+file(GLOB COMMON_SRCS ${CMAKE_SOURCE_DIR}/${UPDIR}/tools/common/*.cc)
 file(GLOB MODEL_CHECK_SRCS *.cc)
 
-message(${MODEL_CHECK_SRCS})
+message("[added by cxt] model check srcs:" ${MODEL_CHECK_SRCS})
+message("[added by cxt] cmake source dir:" ${CMAKE_SOURCE_DIR})
+message("[added by cxt] common srcs:" ${COMMON_SRCS})
 
-include_directories(${CMAKE_SOURCE_DIR}/tools/common)
-include_directories(${CMAKE_SOURCE_DIR}/tools/model_check)
-include_directories(${CMAKE_SOURCE_DIR}/source/tnn/interpreter/tnn)
-include_directories(${CMAKE_SOURCE_DIR}/third_party/stb)
+
+include_directories(${CMAKE_SOURCE_DIR}/${UPDIR}/tools/common)
+include_directories(${CMAKE_SOURCE_DIR}/${UPDIR}/tools/model_check)
+include_directories(${CMAKE_SOURCE_DIR}/${UPDIR}/source/tnn/interpreter/tnn)
+include_directories(${CMAKE_SOURCE_DIR}/${UPDIR}/third_party/stb)
+include_directories(${CMAKE_SOURCE_DIR}/${UPDIR}/include)
 
 add_executable(model_check ${MODEL_CHECK_SRCS} ${COMMON_SRCS})
 
