@@ -484,4 +484,8 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+# added by cxt
+scripts/build_macos/
+tools/onnx2tnn/onnx-converter/3rdparty/
+
 
